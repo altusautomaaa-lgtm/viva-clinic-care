@@ -14,7 +14,7 @@ export const getPublicContent = createServerFn({ method: 'GET' }).handler(async 
   ]);
   return { settings: settings.data ?? [], content: content.data ?? [], posts: posts.data ?? [], categories: categories.data ?? [] };
 });
-export const getPublicPost = createServerFn({ method: 'GET' }).inputValidator((slug: string) => slug).handler(async ({ data }) => {
+export const getPublicPost = createServerFn({ method: 'GET' }).validator((slug: string) => slug).handler(async ({ data }) => {
   const { data: post } = await client().from('posts').select('*').eq('slug', data).maybeSingle();
   if (!post || (post.status !== 'published' && post.status !== 'scheduled') || (post.published_at && new Date(post.published_at) > new Date())) return null;
   return post;
