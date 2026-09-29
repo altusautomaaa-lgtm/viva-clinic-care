@@ -12,3 +12,5 @@
 .hero .hero-actions .bg-primary,.site-header .bg-primary,.contact-strip .bg-primary{min-height:44px;padding-inline:20px}
 .hero .hero-actions .bg-primary svg,.site-header .bg-primary svg{color:var(--primary-foreground)}
 @media(max-width:850px){.header-cta .bg-primary{padding-inline:0;min-height:40px}}
+
+.admin-form-actions{display:flex;gap:8px;flex-wrap:wrap}
