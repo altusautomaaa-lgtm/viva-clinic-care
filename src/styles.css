@@ -18,6 +18,8 @@
 /* Mobile: editorial rhythm, readable actions, and edge-to-edge photography. */
 .header-cta .mobile-contact{display:none}
 .bg-primary{color:var(--primary-foreground)}
+.split-media img.clinic-photo{height:auto;aspect-ratio:674 / 510;object-fit:cover}
+.contact-clinic-photo{width:100%;height:auto;aspect-ratio:674 / 510;object-fit:cover;margin-top:38px}
 @media(max-width:850px){
   .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}
   .header-inner .brand{min-width:0}
