@@ -1,5 +1,6 @@
 - [x] Identidade visual e páginas públicas responsivas
 - [x] Blog e conteúdo editável com banco de dados
 - [x] Painel administrativo protegido e formulário de contato
+- [x] Refinar a apresentação e a navegação no celular
 - [ ] Confirmar WhatsApp oficial divulgado no Instagram (aguarda número confirmado)
 - [ ] Publicar especialidades, equipe, exames e procedimentos reais (aguarda conteúdo da clínica)
