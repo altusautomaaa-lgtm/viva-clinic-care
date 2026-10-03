@@ -14,3 +14,74 @@
 @media(max-width:850px){.header-cta .bg-primary{padding-inline:0;min-height:40px}}
 
 .admin-form-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Mobile: editorial rhythm, readable actions, and edge-to-edge photography. */
+.header-cta .mobile-contact{display:none}
+.bg-primary{color:var(--primary-foreground)}
+@media(max-width:850px){
+  .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}
+  .header-inner .brand{min-width:0}
+  .header-actions{gap:8px;flex-shrink:0}
+  .header-cta .desktop-contact{display:none}
+  .header-cta .mobile-contact{display:inline-flex;width:42px;height:42px;padding:0}
+  .menu-toggle{width:42px;height:42px}
+  .mobile-nav{padding:16px 18px 22px;max-height:calc(100dvh - 70px);overflow-y:auto;border-bottom:1px solid var(--border)}
+  .mobile-nav>a:not(:last-child){padding:12px 8px}
+  .mobile-nav>a:last-child{min-height:48px}
+  .hero-image{width:100vw;max-width:none;margin-left:calc((100% - 100vw)/2)}
+}
+@media(max-width:600px){
+  .site-header{height:66px}
+  .mobile-nav{top:66px;max-height:calc(100dvh - 66px)}
+  .brand-copy strong{font-size:24px;letter-spacing:0}
+  .brand-copy small{font-size:7px;letter-spacing:1.4px}
+  .brand-symbol{width:36px;height:36px;flex-shrink:0}
+  .hero-copy{padding:39px 0 30px}
+  .hero .eyebrow{font-size:10px;line-height:1.5;letter-spacing:1.5px;margin-bottom:17px}
+  .hero h1{font-size:36px;line-height:1.08;margin-bottom:19px;max-width:370px}
+  .hero .lead{font-size:16px;line-height:1.55;margin-bottom:22px}
+  .hero-actions{gap:9px}
+  .hero-actions .bg-primary{min-height:48px;width:100%;justify-content:space-between}
+  .hero-actions .text-link{padding:9px 0}
+  .hero-image{height:270px;object-position:center 38%}
+  .ribbon-inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;min-height:88px;padding:10px 0}
+  .ribbon-inner span{min-width:0;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:7px;font-size:10px;line-height:1.25;padding:0 8px;min-height:60px}
+  .ribbon-inner span+span{border-left:1px solid color-mix(in oklch,var(--primary-foreground) 27%,transparent);padding-left:8px}
+  .ribbon-inner span svg{width:20px;height:20px;flex-shrink:0}
+  .section{padding:58px 0}
+  .section-heading{margin-bottom:28px}
+  .section-heading h2,.split-copy h2{font-size:31px;line-height:1.16}
+  .split{gap:28px}
+  .split-media img{height:255px}
+  .eyebrow{margin-bottom:14px;letter-spacing:2px}
+  .service-grid{border-left:0}
+  .service-item{min-height:0;padding:23px 0;display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:14px;border-right:0;background:transparent}
+  .service-item svg{grid-column:1;grid-row:1/4;margin:2px 0 0}
+  .service-item h3,.service-item p,.service-item a{grid-column:2}
+  .service-item h3{font-size:19px;margin-bottom:7px}
+  .service-item p{margin-bottom:9px;font-size:13px}
+  .service-item a{margin-top:0}
+  .image-band img{height:250px}
+  .image-band-copy{padding:46px 18px 52px}
+  .image-band-copy h2{font-size:35px}
+  .inner-hero-content{min-height:0;padding-top:26px;padding-bottom:43px}
+  .breadcrumb{margin-bottom:40px}
+  .inner-hero h1{font-size:36px;line-height:1.12}
+  .inner-hero .lead{font-size:16px;line-height:1.55}
+  .contact-layout{gap:44px}
+  .contact-layout h2{font-size:28px;line-height:1.2}
+  .contact-detail{margin:22px 0}
+  .blog-tools{display:flex;flex-direction:column;align-items:stretch;gap:18px}
+  .blog-tools input{order:-1;min-width:0;width:100%;height:48px}
+  .category-list{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none;padding:0 0 4px}
+  .category-list::-webkit-scrollbar{display:none}
+  .category-list button{flex:0 0 auto;min-height:40px}
+  .article-card img{height:220px}
+  .article-body h1{font-size:35px}
+  .article-body .subtitle{font-size:17px}
+  .article-body img{margin:30px 0;height:240px}
+  .footer-grid{gap:32px 18px}
+  .site-footer{padding-top:58px}
+  .floating-contact{width:48px;height:48px;right:16px;bottom:16px;box-shadow:0 4px 16px color-mix(in oklch,var(--primary) 16%,transparent)}
+}
+@media(max-width:350px){.brand-copy strong{font-size:21px}.brand-copy small{font-size:6px}.header-actions{gap:2px}.hero h1{font-size:33px}}
