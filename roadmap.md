@@ -2,5 +2,6 @@
 - [x] Blog e conteúdo editável com banco de dados
 - [x] Painel administrativo protegido e formulário de contato
 - [x] Refinar a apresentação e a navegação no celular
+- [x] Incluir a foto real da fachada da VivaMed nas páginas institucionais
 - [ ] Confirmar WhatsApp oficial divulgado no Instagram (aguarda número confirmado)
 - [ ] Publicar especialidades, equipe, exames e procedimentos reais (aguarda conteúdo da clínica)
