@@ -15,6 +15,11 @@ export function useWhatsApp() {
   const digits = raw.replace(/\D/g, '');
   return digits.length >= 10 ? `https://wa.me/${digits.startsWith('55') ? digits : '55' + digits}` : null;
 }
+export function usePhoneDisplay() {
+  const { data } = useSite();
+  const digits = (data?.settings.find(x => x.key === 'whatsapp')?.value ?? '').replace(/\D/g, '').replace(/^55/, '');
+  return digits.length >= 10 && digits.length <= 11 ? `(${digits.slice(0, 2)}) ${digits.slice(2, digits.length - 4)}-${digits.slice(-4)}` : null;
+}
 export function WhatsAppCTA({ children = 'Agendar atendimento', className = '', iconOnly = false }: { children?: React.ReactNode; className?: string; iconOnly?: boolean }) {
   const url = useWhatsApp();
   return <Button asChild className={className}><a href={url ?? instagram} target="_blank" rel="noopener noreferrer" aria-label={iconOnly ? (url ? 'Falar no WhatsApp' : 'Falar pelo Instagram') : undefined}>{iconOnly ? (url ? <MessageCircle size={19}/> : <Instagram size={19}/>) : <><span>{url ? children : 'Falar pelo Instagram'}</span><ArrowRight size={16}/></>}</a></Button>;
