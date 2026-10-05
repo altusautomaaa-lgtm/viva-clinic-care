@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState, type FormEvent } from 'react';
 import { Instagram, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { InnerHero, useWhatsApp } from '@/components/site';
+import { InnerHero, usePhoneDisplay, useWhatsApp } from '@/components/site';
 import { address, instagram, mapUrl, metadata } from '@/lib/site';
 import { supabase } from '@/integrations/supabase/client';
 import clinic from '@/assets/vivamed-fachada.png.asset.json';
