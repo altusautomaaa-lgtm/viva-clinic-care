@@ -3,5 +3,5 @@
 - [x] Painel administrativo protegido e formulário de contato
 - [x] Refinar a apresentação e a navegação no celular
 - [x] Incluir a foto real da fachada da VivaMed nas páginas institucionais
-- [ ] Confirmar WhatsApp oficial divulgado no Instagram (aguarda número confirmado)
+- [x] WhatsApp oficial: 21 98829-4401 (confirmado por Gabriel em 05/10/2026, placa da fachada)
 - [ ] Publicar especialidades, equipe, exames e procedimentos reais (aguarda conteúdo da clínica)
