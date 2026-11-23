@@ -593,25 +593,21 @@ Quero fotografia, tipografia, composição, espaçamento e hierarquia visual de 
 
 Antes de finalizar, revise todo o projeto procurando inconsistências visuais, textos genéricos, componentes repetitivos e qualquer elemento que faça o site parecer gerado automaticamente.
 
-This project was built with [Lovable](https://lovable.dev).
+## Stack
 
-**Live app**: https://viva-clinic-care.lovable.app
+TanStack Start (React 19, Vite) + Tailwind CSS v4 + Supabase (Postgres, Auth, RLS). Deploy na Vercel via nitro (`preset: vercel`).
 
-## Build with Lovable
+Veja [DEPLOY-VERCEL.md](./DEPLOY-VERCEL.md) para o passo a passo de deploy e de configuração do Supabase.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f5470004-28fe-4506-b029-3b4bdf58ebe2).
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Desenvolvimento local
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requer [Bun](https://bun.sh) (ou Node 20+ com npm).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+git clone https://github.com/altusautomaaa-lgtm/viva-clinic-care.git
+cd viva-clinic-care
+cp .env.example .env   # preencha com as chaves do seu projeto Supabase
+bun install
+bun run dev            # http://localhost:8080
 ```

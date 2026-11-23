@@ -1,33 +1,38 @@
-# Deploy na Vercel
+# Deploy na Vercel + Supabase próprio
 
-O projeto já está configurado para buildar na Vercel: o `vite.config.ts` usa o preset `vercel` do nitro fora do sandbox da Lovable, gerando `.vercel/output` (Build Output API v3) — a Vercel detecta e publica sem configuração extra.
+O projeto é independente de plataforma: `vite.config.ts` usa o preset `vercel` do nitro no `vite build`, gerando `.vercel/output` (Build Output API v3), que a Vercel publica sem configuração extra.
 
-## Passo a passo
+## 1. Supabase
 
-1. **Suba o código para o GitHub** (botão "Connect to GitHub" no editor da Lovable, ou push manual do repositório).
-2. Na Vercel, clique em **Add New → Project** e importe o repositório.
-3. A Vercel detecta o build automaticamente. Confirme:
-   - **Build Command:** `bun run build` (ou `npm run build`)
-   - **Install Command:** `bun install` (ou `npm install`)
-   - **Output Directory:** deixe em branco — o nitro gera `.vercel/output`, que tem prioridade.
-4. Em **Environment Variables**, cadastre (valores disponíveis em Project Settings → Cloud no editor da Lovable):
+1. Crie um projeto em https://supabase.com.
+2. No **SQL Editor**, rode em ordem os arquivos de `drizzle/migrations/`:
+   - `0000_vivamed_content_and_admin.sql`
+   - `0001_restrict_site_settings_public_read.sql`
+3. Em **Authentication → URL Configuration**, defina **Site URL** e **Redirect URLs** com o domínio da Vercel.
+4. Crie sua conta em `/admin` (aba "Criar conta"), confirme o e-mail e dê o papel de admin no SQL Editor:
 
-   | Variável | Onde aparece |
+   ```sql
+   insert into public.user_roles (user_id, role)
+   select id, 'admin' from auth.users where email = 'SEU_EMAIL';
+   ```
+
+## 2. Vercel
+
+1. **Add New → Project** e importe o repositório.
+2. Confirme: **Build Command** `bun run build`, **Install Command** `bun install`, **Output Directory** em branco.
+3. Em **Environment Variables**, cadastre (valores em Supabase → Project Settings → API):
+
+   | Variável | Valor |
    |---|---|
-   | `VITE_SUPABASE_URL` | URL do backend |
-   | `VITE_SUPABASE_PUBLISHABLE_KEY` | chave pública (publishable) |
-   | `VITE_SUPABASE_PROJECT_ID` | ID do projeto de backend |
+   | `VITE_SUPABASE_URL` | URL do projeto |
+   | `VITE_SUPABASE_PUBLISHABLE_KEY` | chave publishable (anon) |
+   | `VITE_SUPABASE_PROJECT_ID` | ID do projeto |
    | `SUPABASE_URL` | mesmo valor de `VITE_SUPABASE_URL` |
    | `SUPABASE_PUBLISHABLE_KEY` | mesmo valor de `VITE_SUPABASE_PUBLISHABLE_KEY` |
 
-   As três primeiras alimentam o app no navegador; as duas últimas são usadas pelas funções de servidor (login do painel admin, envio do formulário de contato).
-
-5. Clique em **Deploy**.
+4. Clique em **Deploy**.
 
 ## Observações
 
-- **Banco de dados e autenticação continuam na Lovable Cloud.** A Vercel hospeda apenas o site; os dados (posts, especialidades, mensagens, login do admin) seguem no backend atual. Nada precisa ser migrado.
-- O login do painel admin (`/admin`) funciona normalmente, desde que as variáveis acima estejam corretas.
-- O domínio configurado na Vercel deve ser adicionado às URLs permitidas de autenticação do backend (Project Settings → Cloud → Authentication), caso o login apresente erro de redirect.
+- Nunca commite o `.env` nem use a chave `service_role` em variáveis `VITE_*`.
 - `.vercel/` é saída de build local — não commitar.
-- O preview dentro da Lovable continua funcionando normalmente; o preset da Vercel só é usado em builds fora do sandbox.
