@@ -5,9 +5,9 @@ O projeto é independente de plataforma: `vite.config.ts` usa o preset `vercel` 
 ## 1. Supabase
 
 1. Crie um projeto em https://supabase.com.
-2. No **SQL Editor**, rode em ordem os arquivos de `drizzle/migrations/`:
-   - `0000_vivamed_content_and_admin.sql`
-   - `0001_restrict_site_settings_public_read.sql`
+2. No **SQL Editor**, rode em ordem:
+   - `supabase/setup.sql` (schema, RLS e policies; equivale a `drizzle/migrations/`)
+   - `supabase/seed.sql` (conteúdo migrado: categorias, posts, especialidades e WhatsApp)
 3. Em **Authentication → URL Configuration**, defina **Site URL** e **Redirect URLs** com o domínio da Vercel.
 4. Crie sua conta em `/admin` (aba "Criar conta"), confirme o e-mail e dê o papel de admin no SQL Editor:
 
@@ -31,6 +31,10 @@ O projeto é independente de plataforma: `vite.config.ts` usa o preset `vercel` 
    | `SUPABASE_PUBLISHABLE_KEY` | mesmo valor de `VITE_SUPABASE_PUBLISHABLE_KEY` |
 
 4. Clique em **Deploy**.
+
+## Imagens
+
+As imagens ficam em `public/images/` e são servidas em `/images/<arquivo>`. Arquivos esperados: `hero.jpg`, `consultation.jpg`, `care.jpg`, `dentistry.jpg`, `doctor.jpg`, `vivamed-fachada.png`, `blog-checkup.jpg`, `blog-exames.jpg`, `blog-rotina-saudavel.jpg`, `blog-saude-bucal.jpg`.
 
 ## Observações
 
